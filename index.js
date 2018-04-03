@@ -12,6 +12,18 @@ app.get('/',function(req,res){
   res.sendFile('index.html', { root: __dirname + '/bin/www' })
 })
 
+app.get('/assets/images/logo.svg',function(req,res){
+  res.sendFile('logo.svg', { root: __dirname + '/bin/www/assets/images' })
+})
+
+app.get('/web.js',function(req,res){
+  res.sendFile('web.js', { root: __dirname + '/bin/www' })
+})
+
+app.get('/index.css',function(req,res){
+  res.sendFile('index.css', { root: __dirname + '/bin/www' })
+})
+
 app.use('/api', require('./routes/api'));
 
 app.listen(3000, () => console.log('Running at http://localhost:3000'))
